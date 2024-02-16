@@ -68,31 +68,4 @@ describe('UserIDRecovery', () => {
         fireEvent.click(submitButton);
     });
 
-    test('Form submission fails with invalid zip code format', () => {
-        // render component
-        const { getByPlaceholderText, getByText } = render(<MemoryRouter><ForgetUsername /></MemoryRouter>);
-
-        // fill in the form with invalid zip code format
-        fireEvent.change(getByPlaceholderText('Enter Zip Code'), { target: { value: '1234' } });
-
-        // simulate form submission
-        fireEvent.click(getByText('Submit'));
-
-        // assert that the form does not submit successfully
-        // check for error messages or other indicators
-        expect(/* assertion for failure */).toBe(/* expected result */);
-    });
-    test('Form submission fails without selecting US-based address option', () => {
-        // render component
-        const { getByText } = render(<MemoryRouter><ForgetUsername /></MemoryRouter>);
-
-        // simulate form submission without selecting US-based address option
-        fireEvent.click(getByText('Submit'));
-
-        // assert that the form does not submit successfully
-        // check for error messages or other indicators
-        expect(/* assertion for failure */).toBe(/* expected result */);
-    });
-
-
 });
